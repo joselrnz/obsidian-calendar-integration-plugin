@@ -1,0 +1,400 @@
+/**
+ * Calendar View Styles (BEM)
+ * FullCalendar integration and calendar-specific styles
+ */
+
+/* ============================================================================
+   Calendar Integration View Container
+   ============================================================================ */
+
+.calendar-integration-view {
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	overflow: visible; /* Changed from hidden to allow dropdowns to overflow */
+}
+
+.calendar-integration-view .google-calendar-fullcalendar {
+	flex: 1;
+	overflow: auto;
+	padding: var(--calendar-view-padding);
+	min-height: 0;
+}
+
+/* ============================================================================
+   Calendar Error State
+   ============================================================================ */
+
+.calendar-error {
+	padding: 2rem;
+	text-align: center;
+	color: var(--text-muted);
+	font-size: 1.1em;
+}
+
+/* ============================================================================
+   FullCalendar Base Styles
+   ============================================================================ */
+
+.calendar-integration-view .fc {
+	height: 100%;
+	width: 100%;
+	font-family: var(--calendar-font-family);
+}
+
+.calendar-integration-view .fc-view-harness {
+	width: 100%;
+	height: 100%;
+}
+
+.calendar-integration-view .fc-scrollgrid {
+	width: 100% !important;
+	border: 1px solid var(--background-modifier-border);
+}
+
+/* ============================================================================
+   FullCalendar Header
+   ============================================================================ */
+
+.calendar-integration-view .fc-toolbar {
+	padding: var(--calendar-spacing-sm) 0;
+	margin-bottom: var(--calendar-spacing-md);
+}
+
+.calendar-integration-view .fc-toolbar-title {
+	font-size: var(--calendar-font-size-xl);
+	font-weight: var(--calendar-font-weight-semibold);
+	color: var(--text-normal);
+}
+
+.calendar-integration-view .fc-button {
+	background: var(--background-primary);
+	border: 1px solid var(--background-modifier-border);
+	color: var(--text-normal);
+	padding: var(--calendar-spacing-xs) var(--calendar-spacing-sm);
+	border-radius: var(--calendar-radius-md);
+	transition: all var(--calendar-transition-fast);
+}
+
+.calendar-integration-view .fc-button:hover {
+	background: var(--background-modifier-hover);
+	border-color: var(--interactive-accent);
+}
+
+.calendar-integration-view .fc-button-primary:not(:disabled):active,
+.calendar-integration-view .fc-button-primary:not(:disabled).fc-button-active {
+	background: var(--interactive-accent);
+	border-color: var(--interactive-accent);
+	color: var(--text-on-accent);
+}
+
+/* ============================================================================
+   FullCalendar Grid
+   ============================================================================ */
+
+.calendar-integration-view .fc-daygrid-day,
+.calendar-integration-view .fc-timegrid-slot,
+.calendar-integration-view .fc-list-day {
+	background: var(--background-primary);
+	border-color: var(--background-modifier-border);
+}
+
+.calendar-integration-view .fc-daygrid-day:hover,
+.calendar-integration-view .fc-timegrid-slot:hover {
+	background: var(--background-modifier-hover);
+}
+
+.calendar-integration-view .fc-day-today {
+	background: var(--background-secondary) !important;
+}
+
+/* Improve time grid appearance */
+.calendar-integration-view .fc-timegrid-col {
+	border-color: var(--background-modifier-border);
+}
+
+.calendar-integration-view .fc-timegrid-slot {
+	height: 3rem; /* Consistent slot height */
+	border-color: var(--background-modifier-border-hover);
+}
+
+/* Make current time more visible with subtle line */
+.calendar-integration-view .fc-timegrid-now-indicator-line {
+	display: block !important; /* Re-enable but style properly */
+	border-color: var(--interactive-accent);
+	border-width: 2px;
+	opacity: 0.6;
+}
+
+.calendar-integration-view .fc-timegrid-now-indicator-arrow {
+	display: none; /* Hide arrow, keep line */
+}
+
+.calendar-integration-view .fc-col-header-cell {
+	background: var(--background-secondary);
+	color: var(--text-normal);
+	font-weight: var(--calendar-font-weight-semibold);
+	padding: var(--calendar-spacing-sm);
+}
+
+/* Fix for white box in top-left corner (timegrid axis) */
+.calendar-integration-view .fc-timegrid-axis {
+	background: var(--background-secondary) !important;
+	color: var(--text-normal) !important;
+}
+
+.calendar-integration-view .fc-timegrid-slot-label {
+	color: var(--text-muted);
+	font-size: var(--calendar-font-size-xs);
+}
+
+/* Fix for black rounded boxes - hide container but keep styled line */
+.calendar-integration-view .fc-timegrid-now-indicator-container {
+	z-index: 1; /* Keep it below events */
+}
+
+/* Fix selection highlight */
+.calendar-integration-view .fc-highlight {
+	background: var(--interactive-accent) !important;
+	opacity: 0.2 !important;
+}
+
+/* Ensure all grid cells have proper background */
+.calendar-integration-view .fc-scrollgrid-section > * {
+	background: var(--background-primary);
+}
+
+.calendar-integration-view .fc-scrollgrid-section-header > * {
+	background: var(--background-secondary);
+}
+
+/* ============================================================================
+   FullCalendar Events
+   ============================================================================ */
+
+.calendar-integration-view .fc-event {
+	border-radius: var(--calendar-radius-sm);
+	border: none;
+	padding: 2px 4px;
+	cursor: pointer;
+	transition: all var(--calendar-transition-fast);
+}
+
+.calendar-integration-view .fc-event:hover {
+	box-shadow: var(--calendar-shadow-md);
+	transform: translateY(-1px);
+	cursor: move; /* Show move cursor on hover */
+}
+
+/* ============================================================================
+   Drag & Drop Visual Feedback
+   ============================================================================ */
+
+.calendar-integration-view .fc-event-dragging {
+	opacity: 0.6;
+	cursor: move !important;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+	transform: scale(1.02);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.calendar-integration-view .fc-event-resizing {
+	opacity: 0.7;
+	cursor: ns-resize !important;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Highlight drop target */
+.calendar-integration-view .fc-highlight {
+	background: var(--interactive-accent);
+	opacity: 0.2;
+}
+
+/* Ghost event during drag */
+.calendar-integration-view .fc-event-mirror {
+	opacity: 0.5;
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* ============================================================================
+   Calendar Refinements & Improvements
+   ============================================================================ */
+
+/* Improve day numbers in month view */
+.calendar-integration-view .fc-daygrid-day-number {
+	color: var(--text-normal);
+	font-weight: var(--calendar-font-weight-medium);
+	padding: var(--calendar-spacing-xs);
+}
+
+/* Improve time labels */
+.calendar-integration-view .fc-timegrid-slot-label-cushion {
+	padding: var(--calendar-spacing-xs) var(--calendar-spacing-sm);
+}
+
+/* Better spacing for events in day/week view */
+.calendar-integration-view .fc-timegrid-event {
+	margin-bottom: 1px;
+}
+
+/* Improve list view */
+.calendar-integration-view .fc-list-event:hover {
+	background: var(--background-modifier-hover);
+}
+
+.calendar-integration-view .fc-list-event-time {
+	color: var(--text-muted);
+	font-size: var(--calendar-font-size-xs);
+}
+
+.calendar-integration-view .fc-list-event-title {
+	color: var(--text-normal);
+}
+
+/* Better "more" link styling in month view */
+.calendar-integration-view .fc-daygrid-more-link {
+	color: var(--interactive-accent);
+	font-size: var(--calendar-font-size-xs);
+	font-weight: var(--calendar-font-weight-medium);
+	padding: 2px 4px;
+	border-radius: var(--calendar-radius-sm);
+}
+
+.calendar-integration-view .fc-daygrid-more-link:hover {
+	background: var(--background-modifier-hover);
+	text-decoration: none;
+}
+
+/* Improve popover for "more" events */
+.calendar-integration-view .fc-popover {
+	background: var(--background-primary);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: var(--calendar-radius-md);
+	box-shadow: var(--calendar-shadow-lg);
+}
+
+.calendar-integration-view .fc-popover-header {
+	background: var(--background-secondary);
+	color: var(--text-normal);
+	padding: var(--calendar-spacing-sm);
+	font-weight: var(--calendar-font-weight-semibold);
+}
+
+.calendar-integration-view .fc-popover-close {
+	color: var(--text-muted);
+	opacity: 0.7;
+}
+
+.calendar-integration-view .fc-popover-close:hover {
+	opacity: 1;
+}
+
+.calendar-integration-view .fc-event-title {
+	font-weight: var(--calendar-font-weight-medium);
+}
+
+/* ============================================================================
+   Custom Event Content
+   ============================================================================ */
+
+.fc-event-main-custom {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	padding: 2px 4px;
+	overflow: hidden;
+}
+
+.fc-event-icon {
+	flex-shrink: 0;
+	font-size: 0.9em;
+}
+
+.fc-event-time-custom {
+	flex-shrink: 0;
+	font-size: 0.85em;
+	font-weight: var(--calendar-font-weight-semibold);
+	margin-right: 4px;
+}
+
+.fc-event-title-custom {
+	flex: 1;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-size: 0.9em;
+}
+
+.fc-event-badge {
+	flex-shrink: 0;
+	font-size: 0.8em;
+	opacity: 0.8;
+	margin-left: 2px;
+}
+
+/* ============================================================================
+   Event Tooltip
+   ============================================================================ */
+
+.calendar-event-tooltip {
+	background: var(--background-primary);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: var(--calendar-radius-md);
+	padding: var(--calendar-spacing-md);
+	max-width: 300px;
+	box-shadow: var(--calendar-shadow-lg);
+	font-size: var(--calendar-font-size-sm);
+	line-height: 1.5;
+	color: var(--text-normal);
+	pointer-events: none;
+	z-index: var(--calendar-z-tooltip);
+}
+
+.calendar-event-tooltip strong {
+	color: var(--text-normal);
+	font-weight: var(--calendar-font-weight-semibold);
+}
+
+.calendar-event-tooltip em {
+	color: var(--text-muted);
+	font-style: normal;
+}
+
+/* ============================================================================
+   List View
+   ============================================================================ */
+
+.calendar-integration-view .fc-list-event:hover {
+	background: var(--background-modifier-hover);
+}
+
+.calendar-integration-view .fc-list-event-title {
+	color: var(--text-normal);
+}
+
+.calendar-integration-view .fc-list-event-time {
+	color: var(--text-muted);
+}
+
+/* ============================================================================
+   Loading State
+   ============================================================================ */
+
+.calendar-loading {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--calendar-spacing-md);
+	z-index: var(--calendar-z-modal);
+}
+
+.calendar-loading-text {
+	color: var(--text-muted);
+	font-size: var(--calendar-font-size-sm);
+}
+

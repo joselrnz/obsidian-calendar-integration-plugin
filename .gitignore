@@ -1,0 +1,42 @@
+# Node modules
+node_modules/
+
+# Build output
+main.js
+main.js.map
+*.js.map
+
+# Generated CSS (built from styles/ directory)
+styles.css
+
+# Environment variables (contains credentials)
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test coverage
+coverage/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Cleanup and temporary files
+cleanup-root.ps1
+temp-*.md
+
+# Archive and reference (if regenerated)
+archive/
+docs/archive/
+reference/
+

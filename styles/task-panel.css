@@ -1,0 +1,328 @@
+/**
+ * Task Panel Styles (BEM)
+ * Card-board inspired task list panel
+ */
+
+/* ============================================================================
+   Task Panel Container
+   ============================================================================ */
+
+.task-panel {
+	display: flex;
+	flex-direction: column;
+	border-top: 1px solid var(--background-modifier-border);
+	background: var(--background-primary);
+	transition: height var(--calendar-transition-normal);
+	overflow: visible; /* Changed from hidden to allow dropdown to overflow */
+}
+
+.task-panel--collapsed {
+	height: var(--task-panel-height-collapsed);
+}
+
+.task-panel--expanded {
+	height: var(--task-panel-height);
+}
+
+/* ============================================================================
+   Task Panel Header
+   ============================================================================ */
+
+.task-panel__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: var(--calendar-spacing-sm) var(--calendar-spacing-md);
+	background: var(--background-secondary);
+	border-bottom: 1px solid var(--background-modifier-border);
+	min-height: var(--task-panel-height-collapsed);
+}
+
+.task-panel__title {
+	display: flex;
+	align-items: center;
+	gap: var(--calendar-spacing-sm);
+	font-size: var(--calendar-font-size-md);
+	font-weight: var(--calendar-font-weight-semibold);
+	color: var(--text-normal);
+}
+
+.task-panel__title-icon {
+	font-size: var(--calendar-font-size-lg);
+}
+
+.task-panel__actions {
+	display: flex;
+	align-items: center;
+	gap: var(--calendar-spacing-sm);
+}
+
+.task-panel__toggle {
+	padding: var(--calendar-spacing-xs);
+	cursor: pointer;
+	transition: transform var(--calendar-transition-fast);
+}
+
+.task-panel__toggle:hover {
+	color: var(--interactive-accent);
+}
+
+.task-panel__toggle--collapsed {
+	transform: rotate(180deg);
+}
+
+/* ============================================================================
+   Task Panel Filter
+   ============================================================================ */
+
+.task-panel__filter {
+	padding: var(--calendar-spacing-sm) var(--calendar-spacing-md);
+	background: var(--background-primary);
+	border-bottom: 1px solid var(--background-modifier-border);
+	position: relative; /* Added for proper dropdown positioning */
+	z-index: 10; /* Ensure filter is above other elements */
+}
+
+.task-panel__filter-select {
+	width: 100%;
+	padding: 6px 12px; /* Fixed padding instead of variables */
+	font-size: 13px; /* Slightly smaller font */
+	border: 1px solid var(--background-modifier-border);
+	border-radius: var(--calendar-radius-md);
+	background: var(--background-primary);
+	color: var(--text-normal);
+	cursor: pointer;
+	position: relative; /* Added for proper dropdown positioning */
+	z-index: 100; /* High z-index to appear above all other elements */
+	/* Ensure full text is visible */
+	box-sizing: border-box;
+	min-width: 0; /* Allow shrinking */
+}
+
+.task-panel__filter-select:hover {
+	border-color: var(--interactive-accent);
+}
+
+.task-panel__filter-select:focus {
+	outline: 2px solid var(--interactive-accent);
+	outline-offset: 2px;
+	border-color: var(--interactive-accent);
+}
+
+/* ============================================================================
+   Task Panel Body
+   ============================================================================ */
+
+.task-panel__body {
+	flex: 1;
+	overflow-y: auto;
+	overflow-x: visible; /* Allow horizontal overflow for dropdowns */
+	padding: var(--calendar-spacing-md);
+	position: relative; /* Added for proper stacking context */
+}
+
+.task-panel__body::-webkit-scrollbar {
+	width: 8px;
+}
+
+.task-panel__body::-webkit-scrollbar-track {
+	background: var(--background-primary);
+}
+
+.task-panel__body::-webkit-scrollbar-thumb {
+	background: var(--background-modifier-border);
+	border-radius: 4px;
+}
+
+.task-panel__body::-webkit-scrollbar-thumb:hover {
+	background: var(--text-muted);
+}
+
+/* ============================================================================
+   Task List
+   ============================================================================ */
+
+.task-panel__list {
+	display: flex;
+	flex-direction: column;
+	gap: var(--calendar-spacing-sm);
+}
+
+/* ============================================================================
+   Task Card (Card-board inspired)
+   ============================================================================ */
+
+.task-card {
+	display: flex;
+	flex-direction: column;
+	gap: var(--task-card-gap);
+	padding: var(--task-card-padding);
+	background: var(--background-secondary);
+	border-left: var(--task-card-border-width) solid var(--text-muted);
+	border-radius: var(--calendar-radius-md);
+	box-shadow: var(--calendar-shadow-sm);
+	transition: all var(--calendar-transition-fast);
+	cursor: pointer;
+}
+
+.task-card:hover {
+	box-shadow: var(--calendar-shadow-md);
+	transform: translateY(-2px);
+}
+
+.task-card:hover .task-card__actions {
+	opacity: 1;
+}
+
+/* Task status colors */
+.task-card--overdue {
+	border-left-color: var(--task-overdue);
+}
+
+.task-card--today {
+	border-left-color: var(--task-today);
+}
+
+.task-card--upcoming {
+	border-left-color: var(--task-upcoming);
+}
+
+.task-card--completed {
+	border-left-color: var(--task-completed);
+	opacity: 0.7;
+}
+
+.task-card--completed .task-card__title {
+	text-decoration: line-through;
+	color: var(--text-muted);
+}
+
+/* ============================================================================
+   Task Card Header
+   ============================================================================ */
+
+.task-card__header {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: var(--calendar-spacing-sm);
+}
+
+.task-card__title {
+	flex: 1;
+	font-size: var(--calendar-font-size-sm);
+	font-weight: var(--calendar-font-weight-medium);
+	color: var(--text-normal);
+	line-height: 1.4;
+}
+
+.task-card__actions {
+	display: flex;
+	align-items: center;
+	gap: var(--calendar-spacing-xs);
+	opacity: 0;
+	transition: opacity var(--calendar-transition-fast);
+}
+
+.task-card__action-btn {
+	padding: 2px 4px;
+	font-size: var(--calendar-font-size-xs);
+	color: var(--text-muted);
+	cursor: pointer;
+	transition: color var(--calendar-transition-fast);
+}
+
+.task-card__action-btn:hover {
+	color: var(--interactive-accent);
+}
+
+.task-card__action-btn--danger:hover {
+	color: var(--calendar-error);
+}
+
+.task-card__action-btn--success:hover {
+	color: var(--calendar-success);
+}
+
+/* ============================================================================
+   Task Card Body
+   ============================================================================ */
+
+.task-card__body {
+	display: flex;
+	flex-direction: column;
+	gap: var(--calendar-spacing-xs);
+}
+
+.task-card__notes {
+	font-size: var(--calendar-font-size-xs);
+	color: var(--text-muted);
+	line-height: 1.4;
+}
+
+.task-card__meta {
+	display: flex;
+	align-items: center;
+	gap: var(--calendar-spacing-sm);
+	font-size: var(--calendar-font-size-xs);
+	color: var(--text-muted);
+}
+
+.task-card__due {
+	display: flex;
+	align-items: center;
+	gap: var(--calendar-spacing-xs);
+}
+
+.task-card__due--overdue {
+	color: var(--task-overdue);
+	font-weight: var(--calendar-font-weight-medium);
+}
+
+.task-card__due--today {
+	color: var(--task-today);
+	font-weight: var(--calendar-font-weight-medium);
+}
+
+/* ============================================================================
+   Empty State
+   ============================================================================ */
+
+.task-panel__empty {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: var(--calendar-spacing-xl);
+	text-align: center;
+	color: var(--text-muted);
+}
+
+.task-panel__empty-icon {
+	font-size: 48px;
+	margin-bottom: var(--calendar-spacing-md);
+	opacity: 0.5;
+}
+
+.task-panel__empty-text {
+	font-size: var(--calendar-font-size-md);
+	margin-bottom: var(--calendar-spacing-sm);
+}
+
+.task-panel__empty-hint {
+	font-size: var(--calendar-font-size-sm);
+	color: var(--text-faint);
+}
+
+/* ============================================================================
+   Loading State
+   ============================================================================ */
+
+.task-panel__loading {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: var(--calendar-spacing-xl);
+	color: var(--text-muted);
+}
+

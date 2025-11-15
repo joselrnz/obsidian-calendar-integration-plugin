@@ -1,0 +1,11 @@
+{
+	"id": "calendar-integration",
+	"name": "Calendar Integration",
+	"version": "2.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "Multi-platform calendar integration for Obsidian. Supports Google Calendar, Microsoft Outlook, and ICS feeds.",
+	"author": "joselrnz",
+	"authorUrl": "https://github.com/joselrnz",
+	"isDesktopOnly": true
+}
+

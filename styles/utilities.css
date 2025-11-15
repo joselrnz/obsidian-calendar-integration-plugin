@@ -1,0 +1,156 @@
+/**
+ * Utility Classes
+ * Reusable single-purpose classes
+ */
+
+/* ============================================================================
+   Flexbox Utilities
+   ============================================================================ */
+
+.calendar-flex {
+	display: flex;
+}
+
+.calendar-flex-col {
+	display: flex;
+	flex-direction: column;
+}
+
+.calendar-flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.calendar-flex-between {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.calendar-flex-start {
+	display: flex;
+	align-items: flex-start;
+}
+
+.calendar-flex-end {
+	display: flex;
+	align-items: flex-end;
+}
+
+.calendar-flex-wrap {
+	flex-wrap: wrap;
+}
+
+.calendar-flex-1 {
+	flex: 1;
+}
+
+/* ============================================================================
+   Gap Utilities
+   ============================================================================ */
+
+.calendar-gap-xs { gap: var(--calendar-spacing-xs); }
+.calendar-gap-sm { gap: var(--calendar-spacing-sm); }
+.calendar-gap-md { gap: var(--calendar-spacing-md); }
+.calendar-gap-lg { gap: var(--calendar-spacing-lg); }
+.calendar-gap-xl { gap: var(--calendar-spacing-xl); }
+
+/* ============================================================================
+   Spacing Utilities
+   ============================================================================ */
+
+.calendar-p-xs { padding: var(--calendar-spacing-xs); }
+.calendar-p-sm { padding: var(--calendar-spacing-sm); }
+.calendar-p-md { padding: var(--calendar-spacing-md); }
+.calendar-p-lg { padding: var(--calendar-spacing-lg); }
+.calendar-p-xl { padding: var(--calendar-spacing-xl); }
+
+.calendar-m-xs { margin: var(--calendar-spacing-xs); }
+.calendar-m-sm { margin: var(--calendar-spacing-sm); }
+.calendar-m-md { margin: var(--calendar-spacing-md); }
+.calendar-m-lg { margin: var(--calendar-spacing-lg); }
+.calendar-m-xl { margin: var(--calendar-spacing-xl); }
+
+/* ============================================================================
+   Text Utilities
+   ============================================================================ */
+
+.calendar-text-xs { font-size: var(--calendar-font-size-xs); }
+.calendar-text-sm { font-size: var(--calendar-font-size-sm); }
+.calendar-text-md { font-size: var(--calendar-font-size-md); }
+.calendar-text-lg { font-size: var(--calendar-font-size-lg); }
+.calendar-text-xl { font-size: var(--calendar-font-size-xl); }
+
+.calendar-text-normal { font-weight: var(--calendar-font-weight-normal); }
+.calendar-text-medium { font-weight: var(--calendar-font-weight-medium); }
+.calendar-text-semibold { font-weight: var(--calendar-font-weight-semibold); }
+.calendar-text-bold { font-weight: var(--calendar-font-weight-bold); }
+
+.calendar-text-center { text-align: center; }
+.calendar-text-left { text-align: left; }
+.calendar-text-right { text-align: right; }
+
+.calendar-text-muted { color: var(--text-muted); }
+.calendar-text-error { color: var(--calendar-error); }
+.calendar-text-success { color: var(--calendar-success); }
+.calendar-text-warning { color: var(--calendar-warning); }
+
+/* ============================================================================
+   Display Utilities
+   ============================================================================ */
+
+.calendar-hidden { display: none; }
+.calendar-block { display: block; }
+.calendar-inline { display: inline; }
+.calendar-inline-block { display: inline-block; }
+
+/* ============================================================================
+   Overflow Utilities
+   ============================================================================ */
+
+.calendar-overflow-auto { overflow: auto; }
+.calendar-overflow-hidden { overflow: hidden; }
+.calendar-overflow-scroll { overflow: scroll; }
+
+/* ============================================================================
+   Cursor Utilities
+   ============================================================================ */
+
+.calendar-cursor-pointer { cursor: pointer; }
+.calendar-cursor-default { cursor: default; }
+.calendar-cursor-not-allowed { cursor: not-allowed; }
+
+/* ============================================================================
+   Opacity Utilities
+   ============================================================================ */
+
+.calendar-opacity-0 { opacity: 0; }
+.calendar-opacity-50 { opacity: 0.5; }
+.calendar-opacity-75 { opacity: 0.75; }
+.calendar-opacity-100 { opacity: 1; }
+
+/* ============================================================================
+   Border Utilities
+   ============================================================================ */
+
+.calendar-border { border: 1px solid var(--background-modifier-border); }
+.calendar-border-t { border-top: 1px solid var(--background-modifier-border); }
+.calendar-border-b { border-bottom: 1px solid var(--background-modifier-border); }
+.calendar-border-l { border-left: 1px solid var(--background-modifier-border); }
+.calendar-border-r { border-right: 1px solid var(--background-modifier-border); }
+
+.calendar-rounded-sm { border-radius: var(--calendar-radius-sm); }
+.calendar-rounded-md { border-radius: var(--calendar-radius-md); }
+.calendar-rounded-lg { border-radius: var(--calendar-radius-lg); }
+.calendar-rounded-xl { border-radius: var(--calendar-radius-xl); }
+
+/* ============================================================================
+   Shadow Utilities
+   ============================================================================ */
+
+.calendar-shadow-sm { box-shadow: var(--calendar-shadow-sm); }
+.calendar-shadow-md { box-shadow: var(--calendar-shadow-md); }
+.calendar-shadow-lg { box-shadow: var(--calendar-shadow-lg); }
+.calendar-shadow-xl { box-shadow: var(--calendar-shadow-xl); }
+

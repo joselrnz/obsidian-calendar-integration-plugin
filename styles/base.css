@@ -1,0 +1,181 @@
+/**
+ * Base Styles
+ * Animations, resets, and common elements
+ */
+
+/* ============================================================================
+   Animations
+   ============================================================================ */
+
+@keyframes calendar-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes calendar-fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes calendar-slide-down {
+	from {
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes calendar-slide-up {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes calendar-pulse {
+	0%, 100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.5;
+	}
+}
+
+/* ============================================================================
+   Loading Spinner
+   ============================================================================ */
+
+.calendar-spinner {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	border: 2px solid var(--background-modifier-border);
+	border-top-color: var(--interactive-accent);
+	border-radius: 50%;
+	animation: calendar-spin 0.6s linear infinite;
+}
+
+.calendar-spinner--large {
+	width: 24px;
+	height: 24px;
+	border-width: 3px;
+}
+
+/* ============================================================================
+   Buttons
+   ============================================================================ */
+
+.calendar-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--calendar-spacing-sm);
+	padding: var(--calendar-spacing-sm) var(--calendar-spacing-md);
+	font-size: var(--calendar-font-size-sm);
+	font-weight: var(--calendar-font-weight-medium);
+	border-radius: var(--calendar-radius-md);
+	border: 1px solid var(--background-modifier-border);
+	background: var(--background-primary);
+	color: var(--text-normal);
+	cursor: pointer;
+	transition: all var(--calendar-transition-fast);
+}
+
+.calendar-button:hover {
+	background: var(--background-modifier-hover);
+	border-color: var(--interactive-accent);
+}
+
+.calendar-button:active {
+	transform: scale(0.98);
+}
+
+.calendar-button:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.calendar-button--primary {
+	background: var(--interactive-accent);
+	color: var(--text-on-accent);
+	border-color: var(--interactive-accent);
+}
+
+.calendar-button--primary:hover {
+	background: var(--interactive-accent-hover);
+	border-color: var(--interactive-accent-hover);
+}
+
+.calendar-button--danger {
+	background: var(--calendar-error);
+	color: white;
+	border-color: var(--calendar-error);
+}
+
+.calendar-button--danger:hover {
+	background: #dc2626;
+	border-color: #dc2626;
+}
+
+.calendar-button--small {
+	padding: var(--calendar-spacing-xs) var(--calendar-spacing-sm);
+	font-size: var(--calendar-font-size-xs);
+}
+
+.calendar-button--icon {
+	padding: var(--calendar-spacing-sm);
+	width: 32px;
+	height: 32px;
+}
+
+/* ============================================================================
+   Badges
+   ============================================================================ */
+
+.calendar-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--calendar-spacing-xs);
+	padding: 2px 8px;
+	font-size: var(--calendar-font-size-xs);
+	font-weight: var(--calendar-font-weight-medium);
+	border-radius: var(--calendar-radius-sm);
+	background: var(--background-secondary);
+	color: var(--text-muted);
+}
+
+.calendar-badge--success {
+	background: rgba(16, 185, 129, 0.1);
+	color: var(--calendar-success);
+}
+
+.calendar-badge--warning {
+	background: rgba(245, 158, 11, 0.1);
+	color: var(--calendar-warning);
+}
+
+.calendar-badge--error {
+	background: rgba(239, 68, 68, 0.1);
+	color: var(--calendar-error);
+}
+
+.calendar-badge--info {
+	background: rgba(59, 130, 246, 0.1);
+	color: var(--calendar-info);
+}
+

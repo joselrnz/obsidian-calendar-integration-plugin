@@ -1,0 +1,124 @@
+/**
+ * CSS Custom Properties (Variables)
+ * Centralized theming and configuration
+ */
+
+:root {
+	/* ============================================================================
+	   Colors
+	   ============================================================================ */
+	
+	/* Primary colors */
+	--calendar-primary: var(--interactive-accent);
+	--calendar-primary-hover: var(--interactive-accent-hover);
+	
+	/* Status colors */
+	--calendar-success: #10b981;
+	--calendar-warning: #f59e0b;
+	--calendar-error: #ef4444;
+	--calendar-info: #3b82f6;
+	
+	/* Task status colors */
+	--task-overdue: #ef4444;
+	--task-today: #f59e0b;
+	--task-upcoming: #3b82f6;
+	--task-completed: #10b981;
+	
+	/* Event colors (Google Calendar defaults) */
+	--event-color-1: #a4bdfc;  /* Lavender */
+	--event-color-2: #7ae7bf;  /* Sage */
+	--event-color-3: #dbadff;  /* Grape */
+	--event-color-4: #ff887c;  /* Flamingo */
+	--event-color-5: #fbd75b;  /* Banana */
+	--event-color-6: #ffb878;  /* Tangerine */
+	--event-color-7: #46d6db;  /* Peacock */
+	--event-color-8: #e1e1e1;  /* Graphite */
+	--event-color-9: #5484ed;  /* Blueberry */
+	--event-color-10: #51b749; /* Basil */
+	--event-color-11: #dc2127; /* Tomato */
+	
+	/* ============================================================================
+	   Spacing
+	   ============================================================================ */
+	
+	--calendar-spacing-xs: 0.25rem;  /* 4px */
+	--calendar-spacing-sm: 0.5rem;   /* 8px */
+	--calendar-spacing-md: 1rem;     /* 16px */
+	--calendar-spacing-lg: 1.5rem;   /* 24px */
+	--calendar-spacing-xl: 2rem;     /* 32px */
+	
+	/* ============================================================================
+	   Border Radius
+	   ============================================================================ */
+	
+	--calendar-radius-sm: 4px;
+	--calendar-radius-md: 6px;
+	--calendar-radius-lg: 8px;
+	--calendar-radius-xl: 12px;
+	
+	/* ============================================================================
+	   Shadows
+	   ============================================================================ */
+	
+	--calendar-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+	--calendar-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+	--calendar-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+	--calendar-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+	
+	/* ============================================================================
+	   Typography
+	   ============================================================================ */
+	
+	--calendar-font-family: var(--font-interface);
+	--calendar-font-mono: var(--font-monospace);
+	
+	--calendar-font-size-xs: 0.75rem;   /* 12px */
+	--calendar-font-size-sm: 0.875rem;  /* 14px */
+	--calendar-font-size-md: 1rem;      /* 16px */
+	--calendar-font-size-lg: 1.125rem;  /* 18px */
+	--calendar-font-size-xl: 1.25rem;   /* 20px */
+	
+	--calendar-font-weight-normal: 400;
+	--calendar-font-weight-medium: 500;
+	--calendar-font-weight-semibold: 600;
+	--calendar-font-weight-bold: 700;
+	
+	/* ============================================================================
+	   Transitions
+	   ============================================================================ */
+	
+	--calendar-transition-fast: 150ms ease-in-out;
+	--calendar-transition-normal: 200ms ease-in-out;
+	--calendar-transition-slow: 300ms ease-in-out;
+	
+	/* ============================================================================
+	   Z-Index Layers
+	   ============================================================================ */
+	
+	--calendar-z-base: 1;
+	--calendar-z-dropdown: 10;
+	--calendar-z-sticky: 20;
+	--calendar-z-modal: 100;
+	--calendar-z-tooltip: 200;
+	
+	/* ============================================================================
+	   Component-Specific Variables
+	   ============================================================================ */
+	
+	/* Task Panel */
+	--task-panel-height: 300px;
+	--task-panel-height-collapsed: 40px;
+	
+	/* Task Card */
+	--task-card-padding: var(--calendar-spacing-md);
+	--task-card-gap: var(--calendar-spacing-sm);
+	--task-card-border-width: 3px;
+	
+	/* Modal */
+	--modal-max-width: 600px;
+	--modal-padding: var(--calendar-spacing-lg);
+	
+	/* Calendar View */
+	--calendar-view-padding: var(--calendar-spacing-md);
+}
+

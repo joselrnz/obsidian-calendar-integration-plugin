@@ -1,0 +1,185 @@
+/**
+ * Reusable Components (BEM)
+ * Shared UI components
+ */
+
+/* ============================================================================
+   Calendar Container (Code Block)
+   ============================================================================ */
+
+.google-calendar-container {
+	padding: var(--calendar-spacing-md);
+	margin: var(--calendar-spacing-md) 0;
+}
+
+.google-calendar-event {
+	padding: var(--calendar-spacing-sm);
+	margin: var(--calendar-spacing-sm) 0;
+	border-left: 3px solid var(--interactive-accent);
+	background-color: var(--background-secondary);
+	border-radius: var(--calendar-radius-sm);
+}
+
+.google-calendar-task {
+	padding: var(--calendar-spacing-sm);
+	margin: var(--calendar-spacing-sm) 0;
+	border-left: 3px solid var(--text-accent);
+	background-color: var(--background-secondary);
+	border-radius: var(--calendar-radius-sm);
+}
+
+/* ============================================================================
+   Error Display
+   ============================================================================ */
+
+.google-calendar-error {
+	display: flex;
+	align-items: flex-start;
+	gap: var(--calendar-spacing-sm);
+	padding: var(--calendar-spacing-md);
+	background: var(--background-modifier-error);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: var(--calendar-radius-md);
+	margin: var(--calendar-spacing-sm) 0;
+}
+
+.google-calendar-error .error-icon {
+	font-size: var(--calendar-font-size-md);
+	flex-shrink: 0;
+	color: var(--text-error);
+}
+
+.google-calendar-error .error-content {
+	flex: 1;
+}
+
+.google-calendar-error .error-content strong {
+	color: var(--text-error);
+	display: block;
+	margin-bottom: var(--calendar-spacing-xs);
+	font-weight: var(--calendar-font-weight-semibold);
+}
+
+.google-calendar-error .error-message {
+	color: var(--text-normal);
+	font-family: var(--calendar-font-mono);
+	font-size: var(--calendar-font-size-sm);
+	background: var(--background-primary);
+	padding: var(--calendar-spacing-xs) var(--calendar-spacing-sm);
+	border-radius: var(--calendar-radius-sm);
+	margin-top: var(--calendar-spacing-xs);
+}
+
+/* ============================================================================
+   Dropdown Menu
+   ============================================================================ */
+
+.calendar-dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.calendar-dropdown__trigger {
+	cursor: pointer;
+	padding: var(--calendar-spacing-sm);
+	border-radius: var(--calendar-radius-md);
+	transition: background var(--calendar-transition-fast);
+}
+
+.calendar-dropdown__trigger:hover {
+	background: var(--background-modifier-hover);
+}
+
+.calendar-dropdown__menu {
+	position: absolute;
+	top: 100%;
+	right: 0;
+	margin-top: var(--calendar-spacing-xs);
+	min-width: 200px;
+	background: var(--background-primary);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: var(--calendar-radius-md);
+	box-shadow: var(--calendar-shadow-lg);
+	z-index: var(--calendar-z-dropdown);
+	overflow: hidden;
+}
+
+.calendar-dropdown__item {
+	display: flex;
+	align-items: center;
+	gap: var(--calendar-spacing-sm);
+	padding: var(--calendar-spacing-sm) var(--calendar-spacing-md);
+	font-size: var(--calendar-font-size-sm);
+	color: var(--text-normal);
+	cursor: pointer;
+	transition: background var(--calendar-transition-fast);
+}
+
+.calendar-dropdown__item:hover {
+	background: var(--background-modifier-hover);
+}
+
+.calendar-dropdown__item-icon {
+	font-size: var(--calendar-font-size-md);
+	width: 20px;
+	text-align: center;
+}
+
+.calendar-dropdown__divider {
+	height: 1px;
+	background: var(--background-modifier-border);
+	margin: var(--calendar-spacing-xs) 0;
+}
+
+/* ============================================================================
+   Search Bar
+   ============================================================================ */
+
+.calendar-search {
+	position: relative;
+	width: 100%;
+}
+
+.calendar-search__input {
+	width: 100%;
+	padding: var(--calendar-spacing-sm) var(--calendar-spacing-md);
+	padding-left: 36px;
+	font-size: var(--calendar-font-size-sm);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: var(--calendar-radius-md);
+	background: var(--background-primary);
+	color: var(--text-normal);
+	transition: border-color var(--calendar-transition-fast);
+}
+
+.calendar-search__input:focus {
+	outline: none;
+	border-color: var(--interactive-accent);
+}
+
+.calendar-search__icon {
+	position: absolute;
+	left: var(--calendar-spacing-md);
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: var(--calendar-font-size-md);
+	color: var(--text-muted);
+	pointer-events: none;
+}
+
+/* ============================================================================
+   Divider
+   ============================================================================ */
+
+.calendar-divider {
+	height: 1px;
+	background: var(--background-modifier-border);
+	margin: var(--calendar-spacing-md) 0;
+}
+
+.calendar-divider--vertical {
+	width: 1px;
+	height: auto;
+	margin: 0 var(--calendar-spacing-md);
+}
+

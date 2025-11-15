@@ -1,0 +1,61 @@
+{
+	"name": "calendar-integration",
+	"version": "2.0.0",
+	"description": "Google Calendar integration for Obsidian. View, create, and manage your Google Calendar events and tasks with professional UI and OAuth authentication.",
+	"main": "main.js",
+	"scripts": {
+		"dev": "node esbuild.config.mjs",
+		"build": "npm run build-css && tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
+		"build-css": "node build-css.mjs",
+		"deploy": "npm run build && powershell -ExecutionPolicy Bypass -File deploy.ps1",
+		"type-check": "tsc -noEmit -skipLibCheck",
+		"test": "vitest",
+		"test:ui": "vitest --ui",
+		"test:run": "vitest run",
+		"test:coverage": "vitest run --coverage",
+		"version": "node version-bump.mjs && git add manifest.json versions.json"
+	},
+	"keywords": [
+		"obsidian",
+		"obsidian-plugin",
+		"calendar",
+		"google-calendar",
+		"microsoft-calendar",
+		"outlook",
+		"ics",
+		"calendar-integration",
+		"multi-calendar",
+		"productivity"
+	],
+	"author": "joselrnz",
+	"license": "MIT",
+	"dependencies": {
+		"@fullcalendar/core": "^6.1.19",
+		"@fullcalendar/daygrid": "^6.1.19",
+		"@fullcalendar/interaction": "^6.1.19",
+		"@fullcalendar/list": "^6.1.19",
+		"@fullcalendar/timegrid": "^6.1.19",
+		"@reduxjs/toolkit": "^2.10.1",
+		"date-fns": "^4.1.0",
+		"yaml": "^2.2.1"
+	},
+	"devDependencies": {
+		"@rollup/rollup-win32-x64-msvc": "^4.52.5",
+		"@testing-library/jest-dom": "^6.9.1",
+		"@testing-library/svelte": "^5.2.8",
+		"@tsconfig/svelte": "^3.0.0",
+		"@types/node": "^16.11.6",
+		"@typescript-eslint/eslint-plugin": "5.29.0",
+		"@typescript-eslint/parser": "5.29.0",
+		"@vitest/ui": "^4.0.7",
+		"builtin-modules": "^3.3.0",
+		"esbuild": "^0.17.3",
+		"jsdom": "^27.1.0",
+		"obsidian": "latest",
+		"svelte-preprocess": "^5.0.3",
+		"tslib": "2.4.0",
+		"typescript": "4.7.4",
+		"vite-plugin-static-copy": "^3.1.4",
+		"vitest": "^4.0.7"
+	}
+}
